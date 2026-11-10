@@ -1,77 +1,169 @@
-# Online Food Delivery Analysis
+# 🍔 Online Food Delivery Analysis Dashboard
 
-# Project Overview
-This project analyzes online food delivery data to understand customer behavior, order trends, revenue, delivery performance, and business insights. The project covers data cleaning, preprocessing, exploratory data analysis, feature engineering, MySQL storage, analytical tasks, and an interactive Power BI dashboard.
+An interactive **Online Food Delivery Analysis Dashboard** developed using Python, Pandas, MySQL, SQL, and Microsoft Power BI.
 
-# Tools and Technologies
-Python
-Pandas
-Google Colab
-MySQL
-SQL
-Power BI
+This project analyzes food delivery data to understand customer behavior, order trends, revenue, delivery performance, cancellation patterns, and business profitability.
 
-# Project Workflow
+## 📌 Project Overview
 
-1. Data Cleaning and Preprocessing
+The Online Food Delivery Analysis project focuses on transforming raw food delivery data into meaningful business insights through data cleaning, exploratory data analysis (EDA), SQL analysis, and interactive Power BI visualizations.
 
-* Checked and cleaned the dataset.
-* Handled missing values and data inconsistencies where required.
-* Prepared the dataset for analysis.
+The project includes:
 
-2. Exploratory Data Analysis (EDA)
+- Data Cleaning and Preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- MySQL Database Storage
+- SQL-Based Analytical Tasks
+- Interactive Power BI Dashboard
+- Business Performance Analysis
 
-* Distribution of order values and delivery times
-* City-wise and cuisine-wise order analysis
-* Weekend vs. weekday demand analysis
-* Relationship between delivery distance and delivery time
-* Analysis of order cancellation reasons
-* Correlation analysis among numerical features
+The main objective is to identify order patterns, analyze delivery performance, and support data-driven business decisions.
 
-3. Feature Engineering
+## 🛠️ Tools and Technologies
 
-Created useful features from the existing data to support analysis.
+- **Programming Language:** Python
+- **Data Analysis:** Pandas
+- **Development Environment:** Google Colab
+- **Database:** MySQL
+- **Query Language:** SQL
+- **Data Visualization:** Microsoft Power BI
+- **Version Control:** GitHub
 
-4. Data Storage (MySQL)
+## 🔄 Project Workflow
 
-* Stored the prepared data in a MySQL database.
-* Used SQL queries to retrieve and analyze data.
+### 1. Data Cleaning and Preprocessing
 
-5. Analytical Tasks (EDA and Analytics)
+- Checked the dataset for missing values and inconsistencies.
+- Cleaned and prepared the data for analysis.
+- Improved data quality for accurate reporting.
 
-* Analyzed order distribution and revenue.
-* Examined delivery performance and cancellation trends.
-* Explored customer ratings and profit margin.
+### 2. Exploratory Data Analysis (EDA)
 
-6. Power BI Dashboard
+Performed analysis to understand:
 
-# Created an interactive dashboard with the following KPIs:
+- Distribution of order values and delivery times
+- City-wise and cuisine-wise order patterns
+- Weekend vs. weekday demand
+- Relationship between delivery distance and delivery time
+- Order cancellation reasons
+- Correlations between numerical features
 
-Total Orders
-Total Revenue
-Average Order Value
-Average Delivery Time
-Cancellation Rate
-Average Delivery Rating
-Profit Margin %
+### 3. Feature Engineering
 
-# Dashboard visualizations include:
-* City-wise Order Distribution
-* Cuisine-wise Order Distribution
-* Weekday vs. Weekend Order Analysis
-* Distance vs. Delivery Time Relationship
-* Interactive slicers and City-to-Area drill-down
+Created additional features from existing data to support analytical tasks and improve business insights.
 
-# Dataset
+### 4. MySQL Database Storage
 
-The project uses raw and cleaned food delivery data for data preparation and analysis.
+- Stored cleaned data in a MySQL database.
+- Used SQL queries to retrieve and analyze order information.
+- Performed analytical operations to understand business performance.
 
-# Project Files
+### 5. Data Analysis and Business Insights
 
-Python source code (.py)
-Cleaned dataset (.csv)
-Power BI dashboard (.pbix)
+Analyzed important business metrics, including:
 
-# Project Objective
+- Order distribution and revenue
+- Delivery performance
+- Cancellation trends
+- Customer ratings
+- Profit margin
 
-To transform raw food delivery data into meaningful business insights using Python, SQL, and Power BI.
+## 📊 Power BI Dashboard
+
+Developed an interactive Power BI dashboard to visualize food delivery performance and business trends.
+
+### 🎯 Key Performance Indicators (KPIs)
+
+The dashboard displays the following KPIs:
+
+| KPI | Dashboard Value |
+|---|---:|
+| Total Orders | 100K |
+| Total Revenue | 171M |
+| Average Order Value | 1.79K |
+| Average Delivery Time | 124.98 |
+| Average Delivery Rating | 2.99 |
+| Cancellation Rate | 15.04 |
+| Profit Margin | 15.04% |
+
+### 📈 Dashboard Visualizations
+
+The dashboard includes:
+
+- **City-wise Order Distribution:** Compares order volumes across cities.
+- **Cuisine-wise Order Distribution:** Shows the distribution of orders by cuisine type.
+- **Weekday vs. Weekend Analysis:** Compares order demand during weekdays and weekends.
+- **Distance vs. Delivery Time:** Examines the relationship between delivery distance and delivery time.
+- **Interactive Filters:** Allows users to explore results using order status and city selections.
+
+### 📸 Dashboard Preview
+
+[View Online Food Delivery Dashboard PDF](food_delivery_power%20BI.pdf)
+
+## 📁 Project Structure
+
+```text
+Online_Food_Delivery_Analysis/
+│
+├── README.md
+├── project_2_py.py
+├── food_delivery_cleaned (1).csv
+├── food_delivery_analysis.pbix
+└── food_delivery_power BI.pdf
+```
+
+## 📂 Dataset
+
+The project uses raw and cleaned online food delivery data.
+
+The dataset supports analysis of:
+
+- Customer orders
+- Order values and revenue
+- Cuisine preferences
+- Delivery times and distances
+- Order status and cancellations
+- Customer ratings
+- Profitability
+
+## 🚀 Project Dashboard
+
+The dashboard was developed using Microsoft Power BI.
+
+### 📊 Power BI Dashboard File
+
+[View Power BI Dashboard File](food_delivery_analysis.pbix)
+
+### 📑 Dashboard PDF
+
+[View Dashboard PDF](food_delivery_power%20BI.pdf)
+
+## 🎯 Project Objective
+
+The main goal of this project is to analyze online food delivery operations, identify important business trends, evaluate delivery performance, and transform raw data into useful insights using Python, SQL, and Power BI.
+
+## 💡 Key Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Cleaning and preprocessing datasets using Python and Pandas
+- Performing exploratory data analysis
+- Creating useful features for analysis
+- Storing and retrieving data using MySQL
+- Writing SQL queries for business analysis
+- Creating interactive dashboards using Power BI
+- Analyzing business performance through KPIs and charts
+- Managing project files using GitHub
+
+## 📝 Conclusion
+
+This project demonstrates how Python, SQL, and Power BI can be combined to analyze online food delivery data and provide meaningful business insights.
+
+The dashboard helps users understand order distribution, revenue performance, customer preferences, delivery efficiency, and profitability.
+
+## 👩‍💻 Author
+
+**Manju K**
+
+Data Analytics Project – Online Food Delivery Analysis Dashboard
