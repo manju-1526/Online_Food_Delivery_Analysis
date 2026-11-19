@@ -97,10 +97,6 @@ The dashboard includes:
 - **Distance vs. Delivery Time:** Examines the relationship between delivery distance and delivery time.
 - **Interactive Filters:** Allows users to explore results using order status and city selections.
 
-### 📸 Dashboard Preview
-
-[View Online Food Delivery Dashboard PDF](food_delivery_power%20BI.pdf)
-
 ## 📁 Project Structure
 
 ```text
@@ -131,11 +127,7 @@ The dataset supports analysis of:
 
 The dashboard was developed using Microsoft Power BI.
 
-### 📊 Power BI Dashboard File
-
-[View Power BI Dashboard File](food_delivery_analysis.pbix)
-
-### 📑 Dashboard PDF
+### 📊 Power BI Dashboard PDF
 
 [View Dashboard PDF](food_delivery_power%20BI.pdf)
 
