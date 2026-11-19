@@ -162,8 +162,4 @@ This project demonstrates how Python, SQL, and Power BI can be combined to analy
 
 The dashboard helps users understand order distribution, revenue performance, customer preferences, delivery efficiency, and profitability.
 
-## 👩‍💻 Author
-
-**Manju K**
-
 Data Analytics Project – Online Food Delivery Analysis Dashboard
