@@ -387,7 +387,7 @@ df["Delivery_Performance"] = pd.cut(
 df["Age_Group"] = pd.cut(
     df["Customer_Age"],
     bins=[0, 18, 30, 45, 60, float("inf")],
-    labels=["Under 18", "18-30", "31-45", "46-60", "Above 60"]
+    labels=["18 and Below", "19-30", "31-45", "46-60", "Above 60"]
 )
 
 !pip install sqlalchemy pymysql
