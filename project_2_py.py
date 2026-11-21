@@ -16,7 +16,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv("/content/ONINE_FOOD_DELIVERY_ANALYSIS.csv")
-df
+
+# top 5 rows
+df.head()
+
+# shape
+df.shape
 
 # column names
 df.columns
@@ -66,11 +71,21 @@ df["Order_Value"] = df["Order_Value"].fillna(
     df["Order_Value"].median()
 )
 
+df["Restaurant_Rating"] = df["Restaurant_Rating"].fillna(
+    df["Restaurant_Rating"].median()
+)
+
+df["Delivery_Rating"] = df["Delivery_Rating"].fillna(
+    df["Delivery_Rating"].median()
+)
+
 df[[
     "Customer_Age",
     "Delivery_Time_Min",
     "Distance_km",
-    "Order_Value"
+    "Order_Value",
+    "Restaurant_Rating",
+    "Delivery_Rating"
 ]].isnull().sum()
 
 # filling mode
@@ -79,16 +94,17 @@ cols = [
     "City",
     "Area",
     "Cuisine_Type",
-    "Payment_Mode"
+    "Payment_Mode",
+    "Order_Date",
+    "Order_Time",
+    "Order_Day",
+    "Peak_Hour"
 ]
 
 for col in cols:
     df[col] = df[col].fillna(df[col].mode()[0])
 
 df[cols].isnull().sum()
-
-# Fill missing Restaurant_Name
-df.loc[df["Restaurant_Name"].eq("Re"), "Restaurant_Name"] = "Unknown"
 
 # Fill missing Discount_Applied only if nan means no discount
 df["Discount_Applied"] = df["Discount_Applied"].fillna(0)
@@ -98,57 +114,12 @@ df["Final_Amount"] = df["Final_Amount"].fillna(
     df["Order_Value"] - df["Discount_Applied"]
 )
 
-# filling order_date
-df["Order_Date"] = df["Order_Date"].fillna(df["Order_Date"].mode()[0])
-
-# filling Order_Time
-df["Order_Time"] = df["Order_Time"].fillna(
-    df["Order_Time"].mode()[0]
-)
-
 # Cancelled orders: missing reason
 mask = (
     (df["Order_Status"] == "cancelled") &
     (df["Cancellation_Reason"].isna())
 )
 df.loc[mask, "Cancellation_Reason"] = "Unknown"
-
-# Other orders: reason is not applicable
-mask = (
-    (df["Order_Status"] != "cancelled") &
-    (df["Cancellation_Reason"].isna())
-)
-df.loc[mask, "Cancellation_Reason"] = "Not applicable"
-
-# filling Delivery_Rating
-df["Delivery_Rating"] = df["Delivery_Rating"].fillna(
-    df["Delivery_Rating"].median()
-)
-
-# filling Peak_Hour
-df["Peak_Hour"] = df["Peak_Hour"].infer_objects(copy=False)
-
-df["Peak_Hour"] = df["Peak_Hour"].fillna(
-    df["Peak_Hour"].mode()[0]
-)
-
-# filling Restaurant_Rating
-df["Restaurant_Rating"] = df["Restaurant_Rating"].fillna(
-    df["Restaurant_Rating"].median()
-)
-
-# Fill remaining missing values
-df["Order_Status"] = df["Order_Status"].fillna("Unknown")
-df["Delivery_Partner_ID"] = df["Delivery_Partner_ID"].fillna("Unknown")
-df["Profit_Margin"] = df["Profit_Margin"].fillna(0)
-
-# Fill missing Order_Day using mode
-df["Order_Day"] = df["Order_Day"].fillna(
-    df["Order_Day"].mode()[0]
-)
-
-# Check missing values
-print("Order_Day missing:", df["Order_Day"].isnull().sum())
 
 df["Order_Date"] = pd.to_datetime(
     df["Order_Date"],
@@ -192,13 +163,9 @@ cols = [
 ]
 
 for col in cols:
-    df[col] = df[col].astype("string").str.strip().str.lower()
+    df[col] = df[col].str.strip().str.lower()
 
 mask = df["Order_Status"] == "cancelled"
-
-df.loc[mask, ["Order_ID", "Order_Status", "Delivery_Rating"]].head(10)
-
-df.loc[mask, "Delivery_Rating"] = np.nan
 
 df.loc[mask, ["Order_ID", "Order_Status", "Delivery_Rating"]].head(10)
 
@@ -433,8 +400,6 @@ df["Age_Group"] = pd.cut(
 !mysql -e "CREATE DATABASE IF NOT EXISTS food_delivery;"
 
 !mysql -e "SHOW DATABASES;"
-
-!pip install sqlalchemy pymysql
 
 !mysql -e "CREATE USER 'fooduser'@'localhost' IDENTIFIED BY 'FoodPass123'; GRANT ALL PRIVILEGES ON food_delivery.* TO 'fooduser'@'localhost'; FLUSH PRIVILEGES;"
 
